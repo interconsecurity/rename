@@ -210,15 +210,16 @@ class FileRepository {
         if (hasAndroidClientInfo) {
           newGoogleServices['client'][i]['services']['appinvite_service'][j]
               ['android_info'] = {
-            ...newGoogleServices['client'][i]['oauth_client'][j]
-                ['android_info'],
+            ...newGoogleServices['client'][i]['services']['appinvite_service']
+                [j]['android_info'],
             'package_name': bundleId,
           };
         }
         if (hasIosClientInfo) {
           newGoogleServices['client'][i]['services']['appinvite_service'][j]
               ['ios_info'] = {
-            ...newGoogleServices['client'][i]['oauth_client'][j]['ios_info'],
+            ...newGoogleServices['client'][i]['services']['appinvite_service']
+                [j]['ios_info'],
             'bundle_id': bundleId,
           };
         }
