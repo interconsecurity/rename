@@ -208,18 +208,18 @@ class FileRepository {
         var hasIosClientInfo = otherOauthClients[j]['ios_info'] != null;
 
         if (hasAndroidClientInfo) {
-          newGoogleServices['client'][i]['services']['appinvite_service'][j]
-              ['android_info'] = {
+          newGoogleServices['client'][i]['services']['appinvite_service']
+              ['other_platform_oauth_client'][j]['android_info'] = {
             ...newGoogleServices['client'][i]['services']['appinvite_service']
-                [j]['android_info'],
+                ['other_platform_oauth_client'][j]['android_info'],
             'package_name': bundleId,
           };
         }
         if (hasIosClientInfo) {
-          newGoogleServices['client'][i]['services']['appinvite_service'][j]
-              ['ios_info'] = {
+          newGoogleServices['client'][i]['services']['appinvite_service']
+              ['other_platform_oauth_client'][j]['ios_info'] = {
             ...newGoogleServices['client'][i]['services']['appinvite_service']
-                [j]['ios_info'],
+                ['other_platform_oauth_client'][j]['ios_info'],
             'bundle_id': bundleId,
           };
         }
